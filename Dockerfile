@@ -8,9 +8,12 @@ RUN wget -q ${SCANNER_URL} && \
     rm ${SCANNER_FILE}.zip
 
 FROM openjdk:8-slim
+ADD docker-entrypoint.sh /docker-entrypoint
 COPY --from=downloader /usr/local/bin/sonar-scanner /usr/bin/
 COPY --from=downloader /usr/local/bin/sonar-scanner-debug /usr/bin/
 COPY --from=downloader /usr/local/lib/sonar-scanner-cli-3.1.0.1141.jar /usr/lib/
 RUN mkdir -p /usr/jre/bin && \ 
-    ln -s /usr/bin/java /usr/jre/bin/java
-CMD ["/usr/bin/sonar-scanner"]
+    ln -s /usr/bin/java /usr/jre/bin/java && \
+    chmod +x /docker-entrypoint
+WORKDIR /code
+ENTRYPOINT ["/docker-entrypoint"]

@@ -7,5 +7,6 @@ services:
      - /code:/code
     env_file:
      - sonar.env
-    command: bash -c 'sonar-scanner -Dsonar.projectKey=${SONAR_PROJECT} -Dsonar.sources=. -Dsonar.python.coverage.reportPath=./coverage.xml -Dsonar.exclusions=**/*.js -Dsonar.host.url=${SONAR_SERVER}   -Dsonar.login=${SONAR_KEY}'
+# Python Common Example of extra cmd args.
+#    command: -Dsonar.sources=. -Dsonar.python.coverage.reportPath=./coverage.xml -Dsonar.exclusions=**/*.js 
 
