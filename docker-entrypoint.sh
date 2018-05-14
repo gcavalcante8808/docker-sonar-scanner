@@ -19,7 +19,7 @@ if [[ ! -f "sonarqube.properties" ]]; then
     fi
 
     echo "No sonarqube.properties found. Running with default options and some extra if provided in the command."
-    exec /usr/bin/sonar-scanner -Dsonar.projectKey=${SONAR_PROJECT} -Dsonar.host.url=${SONAR_SERVER} -Dsonar.login=${SONAR_KEY} "$@"
+    exec /usr/bin/sonar-scanner -Dsonar.projectKey=${SONAR_PROJECT} -Dsonar.host.url=${SONAR_SERVER} -Dsonar.login=${SONAR_KEY} -Dsonar.sources=. "$@"
 
 else 
     echo "sonarqube.properties found, running scanner with only provided args if any."
