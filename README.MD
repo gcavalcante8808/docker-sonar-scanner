@@ -6,7 +6,7 @@ This repository contains base information about gcavalcante8808/sonar-scanner im
 Supported Versions
 ------------------
 
-The current stable versioni (3.1.0.1141 in this moment) is supported. Check the Supported Versions file at ([Supported Versions](https://github.com/gcavalcante8808/docker-sonar-scanner/blob/master/supported_versions)).
+The current stable versioni (3.1.0.1141 at this moment) is supported. Check the Supported Versions file at ([Supported Versions](https://github.com/gcavalcante8808/docker-sonar-scanner/blob/master/supported_versions)).
 
 How To use
 ----------
