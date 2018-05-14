@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  sonar-scanner:
+    image: gcavalcante8808/sonar-scanner
+    volumes:
+     - /code:/code
+    env_file:
+     - sonar.env
+    command: bash -c 'sonar-scanner -Dsonar.projectKey=${SONAR_PROJECT} -Dsonar.sources=. -Dsonar.python.coverage.reportPath=./coverage.xml -Dsonar.exclusions=**/*.js -Dsonar.host.url=${SONAR_SERVER}   -Dsonar.login=${SONAR_KEY}'
+
